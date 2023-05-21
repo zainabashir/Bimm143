@@ -1,0 +1,26 @@
+---
+title: "Class14"
+author: "Zainab Ashir"
+date: "2023-05-21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+#Create a Personal Access Token (PAT) on GitHub
+install.packages("usethis")
+library(usethis)
+create_github_token()
+```
+
+```{r}
+#Store Personal Access Token to Connect RStudio and GitHub
+install.packages("gitcreds")
+library(gitcreds)
+gitcreds_set()
+```
+

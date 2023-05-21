@@ -1,0 +1,87 @@
+---
+title: "Class06hw"
+author: "Zainab Ashir"
+date: "2023-04-24"
+output: pdf_document
+---
+```{r}
+#install.packages("bio3d")
+```
+
+```{r}
+library("bio3d")
+```
+
+
+
+```{r}
+# Run the data.frame data
+df <- data.frame(a=1:10, b=seq(200,400,length=10),c=11:20,d=NA)
+df$a <- (df$a - min(df$a)) / (max(df$a) - min(df$a))
+df$b <- (df$b - min(df$a)) / (max(df$b) - min(df$b))
+df$c <- (df$c - min(df$c)) / (max(df$c) - min(df$c))
+df$d <- (df$d - min(df$d)) / (max(df$a) - min(df$d))
+```
+
+```{r}
+# Can you improve this analysis code?
+library(bio3d)
+s1 <- read.pdb("4AKE")  # kinase with drug
+s2 <- read.pdb("1AKE")  # kinase no drug
+s3 <- read.pdb("1E4Y")  # kinase with drug
+s1.chainA <- trim.pdb(s1, chain="A", elety="CA")
+s2.chainA <- trim.pdb(s2, chain="A", elety="CA")
+s3.chainA <- trim.pdb(s1, chain="A", elety="CA")
+s1.b <- s1.chainA$atom$b
+s2.b <- s2.chainA$atom$b
+s3.b <- s3.chainA$atom$b
+# Plotting s1
+plotb3(s1.b, sse=s1.chainA, typ="l", ylab="Bfactor")
+# Plotting s2
+plotb3(s2.b, sse=s2.chainA, typ="l", ylab="Bfactor")
+# Plotting s3
+plotb3(s3.b, sse=s3.chainA, typ="l", ylab="Bfactor")
+```
+
+
+
+```{r}
+# don't forget to recall package
+library(bio3d)
+# name protein structures
+str1 <- read.pdb("4AKE")  # kinase with drug
+str2 <- read.pdb("1AKE")  # kinase no drug
+str3 <- read.pdb("1E4Y")  # kinase with drug
+```
+
+```{r}
+# Use str for generalize
+str1.chainA <- trim.pdb(str1, chain="A", elety="CA")
+str2.chainA <- trim.pdb(str2, chain="A", elety="CA")
+str3.chainA <- trim.pdb(str3, chain="A", elety="CA")
+```
+
+```{r}
+# Use str for generalize
+str1.b <- str1.chainA$atom$b
+str2.b <- str2.chainA$atom$b
+str3.b <- str3.chainA$atom$b
+```
+
+```{r}
+# Use str for generalize
+plotb3(str1.b, sse=str1.chainA, typ="l", ylab="Bfactor")
+plotb3(str2.b, sse=str2.chainA, typ="l", ylab="Bfactor")
+plotb3(str3.b, sse=str3.chainA, typ="l", ylab="Bfactor")
+```
+
+```{r}
+# generalizing the code
+trends <- hclust( dist( rbind(str1.b, str2.b, str3.b) ) )
+plot(trends)
+```
+
+
+
+
+
