@@ -1,0 +1,49 @@
+---
+title: "Class#18"
+author: "Zainab Ashir"
+date: "2023-06-04"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+>Q1. How many cancer samples are included in the dataset? 
+
+##They are 372 samples
+
+>Q2. Which is the most mutated gene? 
+
+##It is tp53
+
+>Q3. Which is the most common treatment undergone by patients? 
+
+##It is sorafenib
+
+>Q4. Which is the etiology of the top absolute contributing signature for liver cancer? 
+
+##Aristolochic acid exposure
+
+>Q5. Which is the most prominent mutational context for the top contributing signature in skin cancer? 
+
+##C>T
+
+>Q6. The etiology of the top contributing signature for lung cancer corresponds to an endogenous cellular mechanism. 
+
+##Fasle
+
+>Q7. SBS4 is one of the most common signatures found in lung cancer and is associated with tobacco smoking. 
+
+##True
+
+>Q8. SBS7d is one of the most common signatures in skin cancer and is associated with UV light exposure and high numbers of C>T mutations. 
+
+##False
+
+
+
+
+
+

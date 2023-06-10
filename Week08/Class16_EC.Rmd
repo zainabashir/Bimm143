@@ -1,0 +1,45 @@
+---
+title: "Class16EC"
+author: "Zainab Ashir"
+date: "2023-05-28"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Download using the commands in terminal
+##curl -O https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz
+
+# Unzip and Untar
+##tar -zxvf sratoolkit.current-ubuntu64.tar
+```
+
+>Q. How would you check that these files with extension ‘.fastq’ actually look like what we expect for a FASTQ file? You could try printing the first few lines to the shell standard output:
+
+## Fill in the blank!
+head -n 5 SRR2156848 1.fastq
+
+#use this command above to view first 5 lines
+
+>Q. How could you check the number of sequences in each file?
+
+## Fill in the blanks
+$ grep -c "@" SRR2156848_1.fastq 
+2959900
+
+>Q. Check your answer with the bottom of the file using the tail command and also check the matching mate pair FASTQ file. Do these numbers match? If so why or why not?
+
+## fill in the blank
+ls -1 *.fastq
+
+## Unzip and Untar the resulting file
+tar -xzf kallisto_linux-v0.44.0.tar.gz
+
+## Fill in the blank
+$ export PATH=$PATH:/home/ubuntu/kallisto_linux-v0.44.0
+
+
+
